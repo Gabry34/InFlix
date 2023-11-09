@@ -10,11 +10,12 @@ const PopularMovie = () => {
   const [startIndex, setStartIndex] = useState(0);
   const moviesPerPage = 6;
   const scrollContainerRef = React.useRef(null);
+  const API_KEY = process.env.API_KEY;
 
   useEffect(() => {
     axios
       .get(
-        "https://api.themoviedb.org/3/movie/popular?api_key=138dec1a639c4b6770dce3064a9d52e3&append_to_response=videos"
+        `https://api.themoviedb.org/3/movie/popular?api_key=${API_KEY}&append_to_response=videos`
       )
       .then((response) => {
         const allMovies = response.data.results;

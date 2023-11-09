@@ -2,14 +2,18 @@
 
 import React, { useEffect, useState } from "react";
 import axios from "axios";
-import Nav from "../components/Nav";
-import CastCard from "../components/CastCard";
-import Video from "../components/Video";
+import Nav from "@/components/Nav";
+import CastCard from "@/components/CastCard";
+import Video from "@/components/Video";
+import Image from "next/image";
+import { FiPlay } from "react-icons/fi";
+import { BsArrowRight } from "react-icons/bs";
 
 const InfoMovie = () => {
   const currentURL = window.location.href;
   const urlSegments = currentURL.split("/");
   const lastSegment = urlSegments[urlSegments.length - 1];
+  const API_KEY = process.env.API_KEY;
 
   const [movie, setMovie] = useState({});
   const [cast, setCast] = useState({});
@@ -18,7 +22,7 @@ const InfoMovie = () => {
   useEffect(() => {
     axios
       .get(
-        `https://api.themoviedb.org/3/movie/${lastSegment}?api_key=138dec1a639c4b6770dce3064a9d52e3&append_to_response=videos`
+        `https://api.themoviedb.org/3/movie/${lastSegment}?api_key=${API_KEY}&append_to_response=videos`
       )
       .then((response) => {
         const movieData = response.data;
@@ -101,9 +105,11 @@ const InfoMovie = () => {
         <div className=" bg-black opacity-90 w-full h-full flex justify-center">
           <div className="px-52 py-28 w-full h-full flex">
             <div className="h-full flex items-center min-w-[320px]">
-              <img
+              <Image
                 src={getImageSmall(movie.poster_path)}
-                className="w-80 rounded-md"
+                width={500}
+                height={500}
+                className="rounded-md"
               />
             </div>
             <div className="py-20 px-10 flex flex-col gap-2">
@@ -148,11 +154,7 @@ const InfoMovie = () => {
                   onClick={openTrailer}
                   className="flex items-center gap-2 flex-row-reverse border-2 p-1 rounded-md"
                 >
-                  <img
-                    src="http://localhost:3000/src/assets/play.svg"
-                    alt=""
-                    className="w-5"
-                  />
+                  <FiPlay size={24} />
                   <p className="text-lg">Trailer</p>
                 </button>
               </div>
@@ -175,11 +177,7 @@ const InfoMovie = () => {
           onClick={CastCrew}
         >
           <p>Complete cast and crew</p>
-          <img
-            src="http://localhost:3000/src/assets/arrow-right.svg"
-            alt=""
-            className="w-6 mt-[2px]"
-          />
+          <BsArrowRight size={20} />
         </div>
       </div>
       <div className="w-full flex justify-center items-center">

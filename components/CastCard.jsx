@@ -1,3 +1,4 @@
+import Image from "next/image";
 import React from "react";
 
 const CastCard = ({ cast }) => {
@@ -16,15 +17,17 @@ const CastCard = ({ cast }) => {
       onClick={PersonMovie}
     >
       {cast && cast.profile_path ? (
-        <img
+        <Image
           src={getImage(cast.profile_path)}
-          alt=""
+          width={250}
+          height={100}
           className="rounded-t-lg"
         />
       ) : (
-        <img
-          src="http://localhost:3000/src/assets/NoProfile.png"
-          alt="No Image Available"
+        <Image
+          src="/NoProfile.png"
+          width={250}
+          height={100}
           className="rounded-t-lg"
         />
       )}

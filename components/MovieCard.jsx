@@ -1,3 +1,4 @@
+import Image from "next/image";
 import React from "react";
 
 const MovieCard = ({ movie }) => {
@@ -23,7 +24,12 @@ const MovieCard = ({ movie }) => {
       className="w-220 shadow-black-md rounded-lg cursor-pointer h-454 m-3"
       onClick={infoMovie}
     >
-      <img src={getImage(movie.poster_path)} alt="" className="rounded-t-lg" />
+      <Image
+        src={getImage(movie.poster_path)}
+        width={300}
+        height={300}
+        className="rounded-t-lg"
+      />
       <div className="p-1 bg-customBlackNav w-9 h-9 flex justify-center items-center rounded-full border-white border-2 relative bottom-5 ml-2">
         <h1>{formattedVoteAverage}</h1>
       </div>

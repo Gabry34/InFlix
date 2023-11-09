@@ -1,7 +1,7 @@
 "use client";
 
+import Image from "next/image";
 import React, { useState, useEffect } from "react";
-import Barbie from "@/public/MovieImage/Barbie.jpg";
 
 const RandomMovie = () => {
   const movies = [
@@ -112,12 +112,10 @@ const RandomMovie = () => {
         >
           <div className="absolute inset-0 bg-gradient-to-l from-transparent to-black w-full h-full">
             <div className="w-1/2 h-full flex flex-col gap-5 pl-20 pt-20">
-              <img
+              <Image
                 src={movies[currentMovieIndex].name}
-                style={{
-                  width: `${parseInt(movies[currentMovieIndex].width)}px`,
-                }}
-                alt="Movie Logo"
+                width={parseInt(movies[currentMovieIndex].width)}
+                height={500}
               />
               <div className="flex flex-col gap-5">
                 <div className="flex gap-5">

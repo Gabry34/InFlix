@@ -10,7 +10,6 @@ const GenreMovie = () => {
   const currentURL = window.location.href;
   const urlSegments = currentURL.split("/");
   const lastSegment = urlSegments[urlSegments.length - 1];
-  const API_KEY = process.env.API_KEY;
 
   const getGenreId = () => {
     if (lastSegment === "drama") {
@@ -40,6 +39,7 @@ const GenreMovie = () => {
 
   useEffect(() => {
     const genreId = getGenreId();
+    const API_KEY = process.env.API_KEY;
 
     axios
       .get(
@@ -52,7 +52,7 @@ const GenreMovie = () => {
       .catch((err) => {
         console.error(err);
       });
-  }, [lastSegment]);
+  }, [lastSegment, getGenreId]);
 
   return (
     <div className="">

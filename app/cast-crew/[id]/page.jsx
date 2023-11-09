@@ -6,10 +6,6 @@ import Nav from "@/components/Nav";
 import CastCard from "@/components/CastCard";
 
 const CastCrew = () => {
-  const currentURL = window.location.href;
-  const urlSegments = currentURL.split("/");
-  const lastSegment = urlSegments[urlSegments.length - 1];
-
   const [movie, setMovie] = useState({});
   const [cast, setCast] = useState({});
   const [crew, setCrew] = useState({});
@@ -21,9 +17,12 @@ const CastCrew = () => {
     return uniqueArray;
   };
 
-  const API_KEY = process.env.API_KEY;
-
   useEffect(() => {
+    const currentURL = window.location.href;
+    const urlSegments = currentURL.split("/");
+    const lastSegment = urlSegments[urlSegments.length - 1];
+    const API_KEY = process.env.API_KEY;
+
     axios
       .get(
         `https://api.themoviedb.org/3/movie/${lastSegment}?api_key=${API_KEY}&append_to_response=videos`
@@ -40,6 +39,9 @@ const CastCrew = () => {
   console.log(movie);
 
   useEffect(() => {
+    const currentURL = window.location.href;
+    const urlSegments = currentURL.split("/");
+    const lastSegment = urlSegments[urlSegments.length - 1];
     axios
       .get(
         `https://api.themoviedb.org/3/movie/${lastSegment}/credits?api_key=138dec1a639c4b6770dce3064a9d52e3&append_to_response=videos`

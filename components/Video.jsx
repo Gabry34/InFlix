@@ -4,14 +4,13 @@ import React, { useEffect, useState } from "react";
 import axios from "axios";
 
 const Video = () => {
-  const currentURL = window.location.href;
-  const urlSegments = currentURL.split("/");
-  const lastSegment = urlSegments[urlSegments.length - 1];
-  const API_KEY = process.env.API_KEY;
-
   const [videos, setVideos] = useState([]);
 
   useEffect(() => {
+    const currentURL = window.location.href;
+    const urlSegments = currentURL.split("/");
+    const lastSegment = urlSegments[urlSegments.length - 1];
+    const API_KEY = process.env.API_KEY;
     axios
       .get(
         `https://api.themoviedb.org/3/movie/${lastSegment}?api_key=${API_KEY}&append_to_response=videos`

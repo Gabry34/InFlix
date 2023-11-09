@@ -10,9 +10,9 @@ const TopRatedMovies = () => {
   const [startIndex, setStartIndex] = useState(0);
   const moviesPerPage = 6;
   const scrollContainerRef = React.useRef(null);
-  const API_KEY = process.env.API_KEY;
 
   useEffect(() => {
+    const API_KEY = process.env.API_KEY;
     axios
       .get(
         `https://api.themoviedb.org/3/movie/top_rated?api_key=${API_KEY}&append_to_response=videos`

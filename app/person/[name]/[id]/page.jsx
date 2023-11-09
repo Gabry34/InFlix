@@ -6,15 +6,14 @@ import Nav from "@/components/Nav";
 import Image from "next/image";
 
 const Person = () => {
-  const currentURL = window.location.href;
-  const urlSegments = currentURL.split("/");
-  const lastSegment = urlSegments[urlSegments.length - 1];
-  const API_KEY = process.env.API_KEY;
-
   const [person, setPerson] = useState({});
   const [personMovies, setPersonMovies] = useState({});
 
   useEffect(() => {
+    const currentURL = window.location.href;
+    const urlSegments = currentURL.split("/");
+    const lastSegment = urlSegments[urlSegments.length - 1];
+    const API_KEY = process.env.API_KEY;
     axios
       .get(
         `https://api.themoviedb.org/3/person/${lastSegment}?api_key=${API_KEY}&append_to_response=videos`
@@ -80,6 +79,7 @@ const Person = () => {
           <div className="w-1/4">
             <Image
               src={getImage(person.profile_path)}
+              alt="image"
               width={400}
               height={400}
               className="rounded-lg"
@@ -127,6 +127,7 @@ const Person = () => {
                     {movie.backdrop_path ? (
                       <Image
                         src={getImageMovie(movie.backdrop_path)}
+                        alt="image"
                         width={300}
                         height={200}
                         className="rounded-md"
@@ -134,6 +135,7 @@ const Person = () => {
                     ) : (
                       <Image
                         src="/NoPersonMovieImage.png"
+                        alt="image"
                         width={300}
                         height={200}
                         className="rounded-md"

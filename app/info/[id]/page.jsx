@@ -10,16 +10,15 @@ import { FiPlay } from "react-icons/fi";
 import { BsArrowRight } from "react-icons/bs";
 
 const InfoMovie = () => {
-  const currentURL = window.location.href;
-  const urlSegments = currentURL.split("/");
-  const lastSegment = urlSegments[urlSegments.length - 1];
-  const API_KEY = process.env.API_KEY;
-
   const [movie, setMovie] = useState({});
   const [cast, setCast] = useState({});
   const [video, setVideo] = useState({});
 
   useEffect(() => {
+    const currentURL = window.location.href;
+    const urlSegments = currentURL.split("/");
+    const lastSegment = urlSegments[urlSegments.length - 1];
+    const API_KEY = process.env.API_KEY;
     axios
       .get(
         `https://api.themoviedb.org/3/movie/${lastSegment}?api_key=${API_KEY}&append_to_response=videos`
@@ -37,6 +36,9 @@ const InfoMovie = () => {
   }, []);
 
   useEffect(() => {
+    const currentURL = window.location.href;
+    const urlSegments = currentURL.split("/");
+    const lastSegment = urlSegments[urlSegments.length - 1];
     axios
       .get(
         `https://api.themoviedb.org/3/movie/${lastSegment}/credits?api_key=138dec1a639c4b6770dce3064a9d52e3&append_to_response=videos`
@@ -107,6 +109,7 @@ const InfoMovie = () => {
             <div className="h-full flex items-center min-w-[320px]">
               <Image
                 src={getImageSmall(movie.poster_path)}
+                alt={movie.original_title}
                 width={500}
                 height={500}
                 className="rounded-md"

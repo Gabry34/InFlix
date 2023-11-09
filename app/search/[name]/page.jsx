@@ -7,14 +7,16 @@ import axios from "axios";
 import MovieCard from "@/components/MovieCard";
 
 const SearchMovie = () => {
+  const [movies, setMovies] = useState([]);
   const currentURL = window.location.href;
   const urlSegments = currentURL.split("/");
   const lastSegment = urlSegments[urlSegments.length - 1];
-  const API_KEY = process.env.API_KEY;
-
-  const [movies, setMovies] = useState([]);
 
   useEffect(() => {
+    const currentURL = window.location.href;
+    const urlSegments = currentURL.split("/");
+    const lastSegment = urlSegments[urlSegments.length - 1];
+    const API_KEY = process.env.API_KEY;
     axios
       .get(
         `https://api.themoviedb.org/3/search/movie?query=${lastSegment}&api_key=${API_KEY}&append_to_response=videos`
@@ -26,7 +28,7 @@ const SearchMovie = () => {
       .catch((err) => {
         console.error(err);
       });
-  }, [lastSegment]);
+  }, []);
 
   console.log(movies);
 
@@ -35,10 +37,12 @@ const SearchMovie = () => {
       <Nav />
       <div className="w-full flex justify-center pt-10 pb-5">
         {movies.length > 0 ? (
-          <h1 className="text-4xl">Results for "{decodeURI(lastSegment)}"</h1>
+          <h1 className="text-4xl">
+            Results for &ldquo;{decodeURI(lastSegment)}&rdquo;
+          </h1>
         ) : (
           <h1 className="text-4xl">
-            No results found for "{decodeURI(lastSegment)}"
+            No results found for &ldquo;{decodeURI(lastSegment)}&rdquo;
           </h1>
         )}
       </div>

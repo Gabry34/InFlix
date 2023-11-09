@@ -33,6 +33,7 @@ const CastCrew = () => {
       .catch((err) => {
         console.error(err);
       });
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [lastSegment, API_KEY]);
 
   console.log(movie);
@@ -54,6 +55,7 @@ const CastCrew = () => {
       .catch((err) => {
         console.error(err);
       });
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [lastSegment]);
 
   console.log(cast);

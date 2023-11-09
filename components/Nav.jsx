@@ -1,6 +1,6 @@
 import React from "react";
-import Burger from "./burger";
-import SearchBar from "./SearchBar";
+import Burger from "@/components/Burger";
+import SearchBar from "@/components/SearchBar";
 
 const Nav = () => {
   return (

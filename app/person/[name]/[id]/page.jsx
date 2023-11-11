@@ -13,10 +13,9 @@ const Person = () => {
     const currentURL = window.location.href;
     const urlSegments = currentURL.split("/");
     const lastSegment = urlSegments[urlSegments.length - 1];
-    const API_KEY = process.env.API_KEY;
     axios
       .get(
-        `https://api.themoviedb.org/3/person/${lastSegment}?api_key=${API_KEY}&append_to_response=videos`
+        `https://api.themoviedb.org/3/person/${lastSegment}?api_key=${process.env.API_KEY}&append_to_response=videos`
       )
       .then((response) => {
         const personData = response.data;

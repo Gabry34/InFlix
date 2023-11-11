@@ -12,7 +12,6 @@ const CastCrew = () => {
   const currentURL = window.location.href;
   const urlSegments = currentURL.split("/");
   const lastSegment = urlSegments[urlSegments.length - 1];
-  const API_KEY = process.env.API_KEY;
 
   const removeDuplicates = (array) => {
     const uniqueArray = array.filter(
@@ -24,7 +23,7 @@ const CastCrew = () => {
   useEffect(() => {
     axios
       .get(
-        `https://api.themoviedb.org/3/movie/${lastSegment}?api_key=${API_KEY}&append_to_response=videos`
+        `https://api.themoviedb.org/3/movie/${lastSegment}?api_key=${process.env.API_KEY}&append_to_response=videos`
       )
       .then((response) => {
         const movieData = response.data;
@@ -33,8 +32,7 @@ const CastCrew = () => {
       .catch((err) => {
         console.error(err);
       });
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [lastSegment, API_KEY]);
+  }, []);
 
   console.log(movie);
 
@@ -55,8 +53,7 @@ const CastCrew = () => {
       .catch((err) => {
         console.error(err);
       });
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [lastSegment]);
+  }, []);
 
   console.log(cast);
   return (

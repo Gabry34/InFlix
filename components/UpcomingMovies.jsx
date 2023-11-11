@@ -12,10 +12,9 @@ const UpcomingMovie = () => {
   const scrollContainerRef = React.useRef(null);
 
   useEffect(() => {
-    const API_KEY = process.env.API_KEY;
     axios
       .get(
-        `https://api.themoviedb.org/3/movie/upcoming?api_key=${API_KEY}&append_to_response=videos`
+        `https://api.themoviedb.org/3/movie/upcoming?api_key=${process.env.API_KEY}&append_to_response=videos`
       )
       .then((response) => {
         const allMovies = response.data.results;

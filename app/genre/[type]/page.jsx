@@ -39,11 +39,10 @@ const GenreMovie = () => {
 
   useEffect(() => {
     const genreId = getGenreId();
-    const API_KEY = process.env.API_KEY;
 
     axios
       .get(
-        `https://api.themoviedb.org/3/discover/movie?api_key=${API_KEY}&with_genres=${genreId}`
+        `https://api.themoviedb.org/3/discover/movie?api_key=${process.env.API_KEY}&with_genres=${genreId}`
       )
       .then((response) => {
         const fetchedMovies = response.data.results;

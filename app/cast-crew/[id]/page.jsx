@@ -9,9 +9,6 @@ const CastCrew = () => {
   const [movie, setMovie] = useState({});
   const [cast, setCast] = useState({});
   const [crew, setCrew] = useState({});
-  const currentURL = window.location.href;
-  const urlSegments = currentURL.split("/");
-  const lastSegment = urlSegments[urlSegments.length - 1];
 
   const removeDuplicates = (array) => {
     const uniqueArray = array.filter(
@@ -21,6 +18,9 @@ const CastCrew = () => {
   };
 
   useEffect(() => {
+    const currentURL = window.location.href;
+    const urlSegments = currentURL.split("/");
+    const lastSegment = urlSegments[urlSegments.length - 1];
     axios
       .get(
         `https://api.themoviedb.org/3/movie/${lastSegment}?api_key=${process.env.API_KEY}&append_to_response=videos`
@@ -37,6 +37,9 @@ const CastCrew = () => {
   console.log(movie);
 
   useEffect(() => {
+    const currentURL = window.location.href;
+    const urlSegments = currentURL.split("/");
+    const lastSegment = urlSegments[urlSegments.length - 1];
     axios
       .get(
         `https://api.themoviedb.org/3/movie/${lastSegment}/credits?api_key=138dec1a639c4b6770dce3064a9d52e3&append_to_response=videos`

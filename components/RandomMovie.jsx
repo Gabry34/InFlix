@@ -114,6 +114,7 @@ const RandomMovie = () => {
             <div className="w-1/2 h-full flex flex-col gap-5 pl-20 pt-20">
               <Image
                 src={movies[currentMovieIndex].name}
+                alt="image"
                 width={parseInt(movies[currentMovieIndex].width)}
                 height={500}
               />

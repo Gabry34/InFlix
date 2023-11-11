@@ -19,6 +19,7 @@ const CastCard = ({ cast }) => {
       {cast && cast.profile_path ? (
         <Image
           src={getImage(cast.profile_path)}
+          alt="image"
           width={250}
           height={100}
           className="rounded-t-lg"
@@ -26,6 +27,7 @@ const CastCard = ({ cast }) => {
       ) : (
         <Image
           src="/NoProfile.png"
+          alt="image"
           width={250}
           height={100}
           className="rounded-t-lg"

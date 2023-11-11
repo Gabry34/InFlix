@@ -119,6 +119,7 @@ const Person = () => {
             {Array.isArray(personMovies) &&
               personMovies.map((movie) => (
                 <div
+                  key={movie.id}
                   className="min-w-[250px] flex flex-col gap-1 cursor-pointer"
                   onClick={() => infoMovie(movie.id)}
                 >
@@ -141,9 +142,7 @@ const Person = () => {
                       />
                     )}
                   </div>
-                  <p key={movie.id} className="pb-1">
-                    {movie.title}
-                  </p>
+                  <p className="pb-1">{movie.title}</p>
                 </div>
               ))}
           </div>

@@ -11,6 +11,7 @@ const TopRatedMovies = () => {
   const moviesPerPage = 6;
   const scrollContainerRef = React.useRef(null);
 
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   useEffect(() => {
     axios
       .get(
@@ -29,7 +30,7 @@ const TopRatedMovies = () => {
       .catch((err) => {
         console.error(err);
       });
-  }, []);
+  }, [moviesPerPage]);
 
   const scrollSmooth = (element, to, duration) => {
     const start = element.scrollLeft;

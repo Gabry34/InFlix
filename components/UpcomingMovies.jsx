@@ -29,7 +29,7 @@ const UpcomingMovie = () => {
       .catch((err) => {
         console.error(err);
       });
-  }, []);
+  }, [moviesPerPage]);
 
   const scrollSmooth = (element, to, duration) => {
     const start = element.scrollLeft;

@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useCallback, useEffect, useState } from "react";
 import React from "react";
 import Nav from "@/components/Nav";
 import axios from "axios";
@@ -11,7 +11,9 @@ const GenreMovie = () => {
   const urlSegments = currentURL.split("/");
   const lastSegment = urlSegments[urlSegments.length - 1];
 
-  const getGenreId = () => {
+  const [movies, setMovies] = useState([]);
+
+  const getGenreId = useCallback(() => {
     if (lastSegment === "drama") {
       return 18;
     } else if (lastSegment === "horror") {
@@ -33,9 +35,7 @@ const GenreMovie = () => {
     } else if (lastSegment === "war") {
       return 10752;
     }
-  };
-
-  const [movies, setMovies] = useState([]);
+  }, [lastSegment]);
 
   useEffect(() => {
     const genreId = getGenreId();
@@ -51,7 +51,7 @@ const GenreMovie = () => {
       .catch((err) => {
         console.error(err);
       });
-  }, [lastSegment, getGenreId]);
+  }, [getGenreId, setMovies]);
 
   return (
     <div className="">

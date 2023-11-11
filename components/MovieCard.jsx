@@ -26,6 +26,7 @@ const MovieCard = ({ movie }) => {
     >
       <Image
         src={getImage(movie.poster_path)}
+        alt="image"
         width={300}
         height={300}
         className="rounded-t-lg"

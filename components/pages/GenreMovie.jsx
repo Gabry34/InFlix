@@ -4,7 +4,7 @@ import { useCallback, useEffect, useState } from "react";
 import React from "react";
 import Nav from "@/components/Nav";
 import axios from "axios";
-import MovieCard from "@/components/MovieCard";
+import MovieCard from "@/components/cards/MovieCard";
 const apiKey = process.env.REACT_APP_API_KEY;
 
 const GenreMovie = ({ apiKey }) => {

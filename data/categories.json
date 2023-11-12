@@ -1,0 +1,12 @@
+[
+  { "id": 18, "name": "drama", "image": "/Categories/drama.webp" },
+  { "id": 27, "name": "horror", "image": "/Categories/horror.webp" },
+  { "id": 28, "name": "action", "image": "/Categories/action.webp" },
+  { "id": 12, "name": "adventure", "image": "/Categories/adventure.jpg" },
+  { "id": 16, "name": "animation", "image": "/Categories/animation.avif" },
+  { "id": 35, "name": "comedy", "image": "/Categories/comedy.jpg" },
+  { "id": 80, "name": "crime", "image": "/Categories/crime.jpg" },
+  { "id": 99, "name": "documentary", "image": "/Categories/documentary.webp" },
+  { "id": 10749, "name": "romance", "image": "/Categories/romance.jpg" },
+  { "id": 10752, "name": "war", "image": "/Categories/war.jpg" }
+]

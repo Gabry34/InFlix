@@ -3,7 +3,7 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
 import Nav from "@/components/Nav";
-import CastCard from "@/components/CastCard";
+import CastCard from "@/components/cards/CastCard";
 
 const CastCrew = () => {
   const [movie, setMovie] = useState({});

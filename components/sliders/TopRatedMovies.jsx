@@ -2,7 +2,8 @@
 
 import React, { useEffect, useState } from "react";
 import axios from "axios";
-import MovieCard from "../MovieCard";
+import MovieCard from "../cards/MovieCard";
+import SmallMovieCard from "../cards/smallMovieCard";
 import { IoIosArrowBack, IoIosArrowForward } from "react-icons/io";
 
 const TopRatedMovies = ({ apiKey }) => {
@@ -73,10 +74,12 @@ const TopRatedMovies = ({ apiKey }) => {
   };
 
   return (
-    <div className="w-full flex flex-col justify-center py-10 px-10">
-      <h1 className="font-Poppins text-4xl mb-8 pl-7">Top Rated</h1>
+    <div className="w-full flex flex-col justify-center py-10 px-10 md:py-0 xs:px-3">
+      <h1 className="font-Poppins text-4xl mb-8 pl-7 md:mb-2 md:text-2xl xs:pl-0">
+        Top Rated
+      </h1>
       <div className="w-full flex justify-center items-center">
-        <div className="flex items-center justify-center">
+        <div className="flex items-center justify-center md:items-start md:justify-start md:min-h-[90px] xs:hidden">
           <IoIosArrowBack
             size={32}
             className="cursor-pointer"
@@ -89,11 +92,16 @@ const TopRatedMovies = ({ apiKey }) => {
         >
           {movies.map((movie, index) => (
             <div key={index}>
-              <MovieCard movie={movie} />
+              <div className="md:hidden">
+                <MovieCard movie={movie} />
+              </div>
+              <div className="hidden md:block">
+                <SmallMovieCard movie={movie} />
+              </div>
             </div>
           ))}
         </div>
-        <div className="flex items-center justify-center">
+        <div className="flex items-center justify-center md:items-start md:justify-start md:min-h-[90px] xs:hidden">
           <IoIosArrowForward
             size={32}
             className="cursor-pointer"

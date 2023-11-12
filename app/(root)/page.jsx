@@ -3,6 +3,7 @@ import PopularMovie from "@/components/sliders/PopularMovie";
 import RandomMovie from "@/components/RandomMovie";
 import UpcomingMovies from "@/components/sliders/UpcomingMovies";
 import TopRatedMovies from "@/components/sliders/TopRatedMovies";
+import Categories from "@/components/sliders/Categories";
 
 export default function Home() {
   const apiKey = process.env.REACT_APP_API_KEY;
@@ -12,6 +13,7 @@ export default function Home() {
       <div>
         <div>
           <RandomMovie />
+          <Categories />
           <PopularMovie apiKey={apiKey} />
           <UpcomingMovies apiKey={apiKey} />
           <TopRatedMovies apiKey={apiKey} />

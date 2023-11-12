@@ -103,22 +103,23 @@ const RandomMovie = () => {
         onClick={infoMovie}
       >
         <div
-          className="w-full relative text-white p-4 h-[700px]"
+          className="w-full relative text-white p-4 h-[700px] md:h-[500px] sm:max-h-[300px] xs:max-h-[200px]"
           style={{
             backgroundImage: `url(${movies[currentMovieIndex].image})`,
             backgroundSize: "cover",
             backgroundPosition: "center",
           }}
         >
-          <div className="absolute inset-0 bg-gradient-to-l from-transparent to-black w-full h-full">
-            <div className="w-1/2 h-full flex flex-col gap-5 pl-20 pt-20">
+          <div className="absolute inset-0 bg-gradient-to-l from-transparent to-black w-full h-full sm:bg-none">
+            <div className="w-1/2 h-full flex flex-col gap-5 pl-20 pt-20 lg:w-full lg:px-20 md:pt-5 sm:p-0 sm:justify-center sm:items-center">
               <Image
                 src={movies[currentMovieIndex].name}
                 alt="image"
                 width={parseInt(movies[currentMovieIndex].width)}
                 height={500}
+                className=""
               />
-              <div className="flex flex-col gap-5">
+              <div className="flex flex-col gap-5 sm:hidden">
                 <div className="flex gap-5">
                   <strong>{movies[currentMovieIndex].vote}</strong>
                   <strong>{movies[currentMovieIndex].date}</strong>

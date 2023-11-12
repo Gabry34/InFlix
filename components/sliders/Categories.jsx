@@ -2,35 +2,13 @@
 
 import React, { useEffect, useState } from "react";
 import axios from "axios";
-import MovieCard from "../cards/MovieCard";
-import SmallMovieCard from "../cards/smallMovieCard";
+import Categories from "@/data/categories.json";
 import { IoIosArrowBack, IoIosArrowForward } from "react-icons/io";
+import Image from "next/image";
+import Link from "next/link";
 
-const UpcomingMovie = ({ apiKey }) => {
-  const [movies, setMovies] = useState([]);
-  const [startIndex, setStartIndex] = useState(0);
-  const moviesPerPage = 6;
+const PopularMovie = () => {
   const scrollContainerRef = React.useRef(null);
-
-  useEffect(() => {
-    axios
-      .get(
-        `https://api.themoviedb.org/3/movie/upcoming?api_key=${apiKey}&append_to_response=videos`
-      )
-      .then((response) => {
-        const allMovies = response.data.results;
-        setMovies([
-          ...allMovies.slice(-moviesPerPage),
-          ...allMovies,
-          ...allMovies.slice(0, moviesPerPage),
-        ]);
-        setStartIndex(moviesPerPage);
-        console.log(movies);
-      })
-      .catch((err) => {
-        console.error(err);
-      });
-  }, [moviesPerPage]);
 
   const scrollSmooth = (element, to, duration) => {
     const start = element.scrollLeft;
@@ -72,12 +50,9 @@ const UpcomingMovie = ({ apiKey }) => {
   };
 
   return (
-    <div className="w-full flex flex-col justify-center py-10 px-10 pb-5 md:py-0 xs:px-3">
-      <h1 className="font-Poppins text-4xl mb-8 pl-7 md:mb-2 md:text-2xl xs:pl-0">
-        Upcoming
-      </h1>
+    <div className="w-full flex flex-col justify-center pt-20 px-10 pb-5 xs:px-3">
       <div className="w-full flex justify-center items-center">
-        <div className="flex items-center justify-center md:items-start md:justify-start md:min-h-[90px] xs:hidden">
+        <div className="flex items-center justify-center sm:hidden">
           <IoIosArrowBack
             size={32}
             className="cursor-pointer"
@@ -86,20 +61,30 @@ const UpcomingMovie = ({ apiKey }) => {
         </div>
         <div
           ref={scrollContainerRef}
-          className="popular overflow-hidden overflow-x-scroll flex gap-2"
+          className="popular overflow-hidden overflow-x-scroll flex gap-3"
         >
-          {movies.map((movie, index) => (
-            <div key={index}>
-              <div className="md:hidden">
-                <MovieCard movie={movie} />
+          {Categories.map((category) => (
+            <Link
+              key={category.id}
+              className="min-w-[300px] h-[150px] rounded-xl relative cursor-pointer"
+              href={`/genre/${category.name}`}
+            >
+              <div className="w-full h-full relative z-10">
+                <Image
+                  src={category.image}
+                  alt="image"
+                  layout="fill"
+                  objectFit="cover"
+                  className="rounded-xl"
+                />
               </div>
-              <div className="hidden md:block">
-                <SmallMovieCard movie={movie} />
+              <div className="w-full h-full bg-black absolute top-0 left-0 bg-opacity-70 rounded-xl z-10 p-2 flex items-end">
+                <h1 className="text-2xl font-Poppins">{category.name}</h1>
               </div>
-            </div>
+            </Link>
           ))}
         </div>
-        <div className="flex items-center justify-center md:items-start md:justify-start md:min-h-[90px] xs:hidden">
+        <div className="flex items-center justify-center sm:hidden">
           <IoIosArrowForward
             size={32}
             className="cursor-pointer"
@@ -111,4 +96,4 @@ const UpcomingMovie = ({ apiKey }) => {
   );
 };
 
-export default UpcomingMovie;
+export default PopularMovie;

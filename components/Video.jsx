@@ -3,7 +3,7 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
 
-const Video = () => {
+const Video = ({ apiKey }) => {
   const [videos, setVideos] = useState([]);
 
   useEffect(() => {
@@ -12,7 +12,7 @@ const Video = () => {
     const lastSegment = urlSegments[urlSegments.length - 1];
     axios
       .get(
-        `https://api.themoviedb.org/3/movie/${lastSegment}?api_key=${process.env.API_KEY}&append_to_response=videos`
+        `https://api.themoviedb.org/3/movie/${lastSegment}?api_key=${apiKey}&append_to_response=videos`
       )
       .then((response) => {
         console.log(response.data.videos.results);

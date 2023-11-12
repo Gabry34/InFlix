@@ -2,10 +2,10 @@
 
 import React, { useEffect, useState } from "react";
 import axios from "axios";
-import MovieCard from "./MovieCard";
+import MovieCard from "../MovieCard";
 import { IoIosArrowBack, IoIosArrowForward } from "react-icons/io";
 
-const UpcomingMovie = () => {
+const UpcomingMovie = ({ apiKey }) => {
   const [movies, setMovies] = useState([]);
   const [startIndex, setStartIndex] = useState(0);
   const moviesPerPage = 6;
@@ -14,7 +14,7 @@ const UpcomingMovie = () => {
   useEffect(() => {
     axios
       .get(
-        `https://api.themoviedb.org/3/movie/upcoming?api_key=${process.env.API_KEY}&append_to_response=videos`
+        `https://api.themoviedb.org/3/movie/upcoming?api_key=${apiKey}&append_to_response=videos`
       )
       .then((response) => {
         const allMovies = response.data.results;

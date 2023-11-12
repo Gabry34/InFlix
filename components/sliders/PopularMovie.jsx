@@ -2,20 +2,19 @@
 
 import React, { useEffect, useState } from "react";
 import axios from "axios";
-import MovieCard from "./MovieCard";
+import MovieCard from "../MovieCard";
 import { IoIosArrowBack, IoIosArrowForward } from "react-icons/io";
 
-const TopRatedMovies = () => {
+const PopularMovie = ({ apiKey }) => {
   const [movies, setMovies] = useState([]);
   const [startIndex, setStartIndex] = useState(0);
   const moviesPerPage = 6;
   const scrollContainerRef = React.useRef(null);
 
-  // eslint-disable-next-line react-hooks/exhaustive-deps
   useEffect(() => {
     axios
       .get(
-        `https://api.themoviedb.org/3/movie/top_rated?api_key=${process.env.API_KEY}&append_to_response=videos`
+        `https://api.themoviedb.org/3/movie/popular?api_key=${apiKey}&append_to_response=videos`
       )
       .then((response) => {
         const allMovies = response.data.results;
@@ -72,8 +71,8 @@ const TopRatedMovies = () => {
   };
 
   return (
-    <div className="w-full flex flex-col justify-center py-10 px-10">
-      <h1 className="font-Poppins text-4xl mb-8 pl-7">Top Rated</h1>
+    <div className="w-full flex flex-col justify-center py-10 px-10 pb-5">
+      <h1 className="font-Poppins text-4xl mb-8 pl-7">Popular</h1>
       <div className="w-full flex justify-center items-center">
         <div className="flex items-center justify-center">
           <IoIosArrowBack
@@ -104,4 +103,4 @@ const TopRatedMovies = () => {
   );
 };
 
-export default TopRatedMovies;
+export default PopularMovie;

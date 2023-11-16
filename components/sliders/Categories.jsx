@@ -78,8 +78,8 @@ const PopularMovie = () => {
                   className="rounded-xl"
                 />
               </div>
-              <div className="w-full h-full bg-black absolute top-0 left-0 bg-opacity-70 rounded-xl z-10 p-2 flex items-end">
-                <h1 className="text-2xl font-Poppins">{category.name}</h1>
+              <div className="w-full h-full bg-black absolute top-0 left-0 bg-opacity-60 rounded-xl z-10 p-2 flex items-end">
+                <h1 className="text-2xl text-white font-Poppins">{category.name}</h1>
               </div>
             </Link>
           ))}

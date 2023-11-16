@@ -32,7 +32,7 @@ const MovieCard = ({ movie }) => {
         className="rounded-t-lg"
       />
       <div className="p-1 bg-customBlackNav w-9 h-9 flex justify-center items-center rounded-full border-white border-2 relative bottom-5 ml-2">
-        <h1 classname="text-white">{formattedVoteAverage}</h1>
+        <h1 className="text-white">{formattedVoteAverage}</h1>
       </div>
       <div className="px-2 flex flex-col justify-around pb-3 gap-1">
         <h1 className="font-Poppins text-white font-extralight">{movie.title}</h1>

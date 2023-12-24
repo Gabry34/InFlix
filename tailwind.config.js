@@ -21,9 +21,6 @@ module.exports = {
       backgroundColor: {
         bgShadow: "linear-gradient(180deg, #6A57CD 14.32%, #9481f4 100%)",
       },
-      width: {
-        220: "220px",
-      },
       height: {
         0.1: "1px",
         454: "454px",

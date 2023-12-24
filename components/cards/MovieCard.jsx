@@ -21,22 +21,26 @@ const MovieCard = ({ movie }) => {
 
   return (
     <div
-      className="w-220 shadow-black-md rounded-lg cursor-pointer h-454 m-3"
+      className="w-[220px] shadow-black-md rounded-lg cursor-pointer h-454 m-3 sm:w-full sm:h-fit"
       onClick={infoMovie}
     >
-      <Image
-        src={getImage(movie.poster_path)}
-        alt="image"
-        width={300}
-        height={300}
-        className="rounded-t-lg"
-      />
+      <div className="w-full flex justify-center">
+        <Image
+          src={getImage(movie.poster_path)}
+          alt="image"
+          width={300}
+          height={300}
+          className="rounded-t-lg"
+        />
+      </div>
       <div className="p-1 bg-customBlackNav w-9 h-9 flex justify-center items-center rounded-full border-white border-2 relative bottom-5 ml-2">
         <h1 className="text-white">{formattedVoteAverage}</h1>
       </div>
       <div className="px-2 flex flex-col justify-around pb-3 gap-1">
-        <h1 className="font-Poppins text-white font-extralight">{movie.title}</h1>
-        <p className="font-extralight text-white text-opacity-40 text-white">
+        <h1 className="font-Poppins text-white font-extralight">
+          {movie.title}
+        </h1>
+        <p className="font-extralight text-opacity-40 text-white">
           {movie.release_date}
         </p>
       </div>

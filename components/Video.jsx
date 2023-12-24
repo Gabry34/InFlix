@@ -24,17 +24,16 @@ const Video = ({ apiKey }) => {
   }, []);
 
   return (
-    <div className="px-52">
+    <div className="px-52 sm:px-5">
       <h1 className="text-4xl font-Poppins">Media</h1>
-      <div className="flex w-full justify-center gap-10 py-10">
+      <div className="flex w-full justify-center gap-10 py-10 md:gap-3 sm:flex-col">
         {videos.map((video) => (
           <iframe
             key={video.key}
-            width="400"
-            height="215"
             src={`https://www.youtube.com/embed/${video.key}`}
             frameBorder="0"
             allowFullScreen
+            className="w-[400px] h-[215px] md:w-[200px] md:h-[150px] sm:min-w-full sm:min-h-[300px]"
           ></iframe>
         ))}
       </div>

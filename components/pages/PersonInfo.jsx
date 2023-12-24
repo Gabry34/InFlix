@@ -73,9 +73,9 @@ const Person = ({ apiKey }) => {
   return (
     <div>
       <Nav />
-      <div className="w-full px-48 py-20 flex flex-col gap-5">
-        <div className="flex gap-10">
-          <div className="w-1/4">
+      <div className="w-full px-48 py-20 flex flex-col gap-5 lg:px-5">
+        <div className="flex gap-10 sm:flex-col">
+          <div className="w-1/4 md:min-w-[200px] sm:w-full">
             <Image
               src={getImage(person.profile_path)}
               alt="image"

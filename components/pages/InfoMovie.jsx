@@ -104,8 +104,8 @@ const InfoMovie = ({ apiKey }) => {
         }}
       >
         <div className=" bg-black opacity-90 w-full h-full flex justify-center">
-          <div className="px-52 py-28 w-full h-full flex">
-            <div className="h-full flex items-center min-w-[320px]">
+          <div className="px-52 py-28 w-full h-full flex lg:px-10 sm:pt-5">
+            <div className="h-full flex items-center min-w-[320px] xl:hidden">
               <Image
                 src={getImageSmall(movie.poster_path)}
                 alt={movie.original_title}
@@ -114,30 +114,34 @@ const InfoMovie = ({ apiKey }) => {
                 className="rounded-md"
               />
             </div>
-            <div className="py-20 px-10 flex flex-col gap-2">
+            <div className="py-20 px-10 flex flex-col gap-2 sm:pt-0 sm:px-0">
               <div>
                 <h1 className="text-5xl font-Poppins">
                   {movie.original_title}
                 </h1>
               </div>
-              <div className="flex gap-2 items-center">
-                <div className=" border-white rounded-sm border-[1px] w-5 flex items-center justify-center h-6">
-                  T
+              <div className="flex gap-2 items-center sm:flex-col sm:items-start">
+                <div className="flex gap-2">
+                  <div className=" border-white rounded-sm border-[1px] w-5 flex items-center justify-center h-6">
+                    T
+                  </div>
+                  <p className="">
+                    {movie.release_date}(
+                    {movie &&
+                      movie.original_language &&
+                      movie.original_language.toUpperCase()}
+                    )
+                  </p>
                 </div>
-                <p className="">
-                  {movie.release_date}(
-                  {movie &&
-                    movie.original_language &&
-                    movie.original_language.toUpperCase()}
-                  )
-                </p>
-                <p className=" text-[6px]">o</p>
-                {movie.genres &&
-                  movie.genres.map((genre) => (
-                    <p key={genre.id}>{genre.name}</p>
-                  ))}
-                <p className=" text-[6px]">o</p>
-                <p>{convertMinutesToHoursAndMinutes(movie.runtime)}</p>
+                <div className="flex items-center gap-2">
+                  <p className=" text-[6px]">o</p>
+                  {movie.genres &&
+                    movie.genres.map((genre) => (
+                      <p key={genre.id}>{genre.name}</p>
+                    ))}
+                  <p className=" text-[6px]">o</p>
+                  <p>{convertMinutesToHoursAndMinutes(movie.runtime)}</p>
+                </div>
               </div>
               <div className="flex gap-1 py-2">
                 <p className="text-[30px]">
@@ -164,9 +168,9 @@ const InfoMovie = ({ apiKey }) => {
           </div>
         </div>
       </div>
-      <div className="px-52 py-20 pb-5 flex flex-col gap-6">
+      <div className="px-52 py-20 pb-5 flex flex-col gap-6 xl:px-5 ">
         <h1 className="text-3xl">Actors in the foreground</h1>
-        <div className="flex justify-center gap-3">
+        <div className="flex justify-center gap-3 xl:overflow-x-scroll xl:justify-start">
           {Array.isArray(cast) &&
             cast.slice(0, 9).map((castMember) => (
               <div key={castMember.id}>
@@ -185,7 +189,7 @@ const InfoMovie = ({ apiKey }) => {
       <div className="w-full flex justify-center items-center">
         <div className="w-3/4 h-[1px] border-t-[1px]"></div>
       </div>
-      <div className="px-52 py-7 flex gap-10">
+      <div className="px-52 py-7 flex gap-10 lg:justify-center md:px-10 md:flex-col sm:px-5">
         <div className="flex gap-2 text-[17px]">
           <strong>Status:</strong>
           <p>{movie.status}</p>

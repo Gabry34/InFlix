@@ -74,7 +74,7 @@ const TopRatedMovies = ({ apiKey }) => {
   };
 
   return (
-    <div className="w-full flex flex-col justify-center py-10 px-10 md:py-0 xs:px-3">
+    <div className="w-full flex flex-col justify-center py-10 px-10 md:py-0 xs:px-3 sm:px-2">
       <h1 className="font-Poppins text-4xl mb-8 pl-7 md:mb-2 md:text-2xl xs:pl-0">
         Top Rated
       </h1>

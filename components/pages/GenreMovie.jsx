@@ -15,26 +15,27 @@ const GenreMovie = ({ apiKey }) => {
   const [movies, setMovies] = useState([]);
 
   const getGenreId = useCallback(() => {
-    if (lastSegment === "drama") {
-      return 18;
-    } else if (lastSegment === "horror") {
-      return 27;
-    } else if (lastSegment === "action") {
-      return 28;
-    } else if (lastSegment === "adventure") {
-      return 12;
-    } else if (lastSegment === "animation") {
-      return 16;
-    } else if (lastSegment === "comedy") {
-      return 35;
-    } else if (lastSegment === "crime") {
-      return 80;
-    } else if (lastSegment === "documentary") {
-      return 99;
-    } else if (lastSegment === "romance") {
-      return 10749;
-    } else if (lastSegment === "war") {
-      return 10752;
+    switch (lastSegment) {
+      case "drama":
+        return 18;
+      case "horror":
+        return 27;
+      case "action":
+        return 28;
+      case "adventure":
+        return 12;
+      case "animation":
+        return 16;
+      case "comedy":
+        return 35;
+      case "crime":
+        return 80;
+      case "documentary":
+        return 99;
+      case "romance":
+        return 10749;
+      case "war":
+        return 10752;
     }
   }, [lastSegment]);
 

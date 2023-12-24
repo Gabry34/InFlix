@@ -58,7 +58,7 @@ const GenreMovie = ({ apiKey }) => {
     <div className="w-full">
       <Nav />
       <div className="w-full flex justify-center pt-10 pb-5">
-        <h1 className="text-4xl">{lastSegment}</h1>
+        <h1 className="text-4xl text-white">{lastSegment}</h1>
       </div>
       <div className="flex justify-center flex-wrap gap-2 pt-2">
         {movies.map((movie, index) => (

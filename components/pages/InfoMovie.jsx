@@ -109,7 +109,7 @@ const InfoMovie = ({ apiKey }) => {
               <Image
                 src={getImageSmall(movie.poster_path)}
                 alt={movie.original_title}
-                width={500}
+                width={300}
                 height={500}
                 className="rounded-md"
               />
@@ -169,7 +169,7 @@ const InfoMovie = ({ apiKey }) => {
         </div>
       </div>
       <div className="px-52 py-20 pb-5 flex flex-col gap-6 xl:px-5 ">
-        <h1 className="text-3xl">Actors in the foreground</h1>
+        <h1 className="text-3xl text-white">Actors in the foreground</h1>
         <div className="flex justify-center gap-3 xl:overflow-x-scroll xl:justify-start">
           {Array.isArray(cast) &&
             cast.slice(0, 9).map((castMember) => (
@@ -182,8 +182,8 @@ const InfoMovie = ({ apiKey }) => {
           className="cursor-pointer w-fit flex gap-1 items-center"
           onClick={CastCrew}
         >
-          <p>Complete cast and crew</p>
-          <BsArrowRight size={20} />
+          <p className="text-white">Complete cast and crew</p>
+          <BsArrowRight size={20} color="white" />
         </div>
       </div>
       <div className="w-full flex justify-center items-center">
@@ -191,22 +191,22 @@ const InfoMovie = ({ apiKey }) => {
       </div>
       <div className="px-52 py-7 flex gap-10 lg:justify-center md:px-10 md:flex-col sm:px-5">
         <div className="flex gap-2 text-[17px]">
-          <strong>Status:</strong>
-          <p>{movie.status}</p>
+          <strong className="text-white">Status:</strong>
+          <p className="text-white">{movie.status}</p>
         </div>
         <div className="flex gap-2 text-[17px]">
-          <strong>Original language:</strong>
-          <p>
+          <strong className="text-white">Original language:</strong>
+          <p className="text-white">
             {movie.spoken_languages && movie.spoken_languages[0].english_name}
           </p>
         </div>
         <div className="flex gap-2 text-[17px]">
-          <strong>Budget:</strong>
-          <p>${formatBudget(movie.budget)},00</p>
+          <strong className="text-white">Budget:</strong>
+          <p className="text-white">${formatBudget(movie.budget)},00</p>
         </div>
         <div className="flex gap-2 text-[17px]">
-          <strong>Revenue:</strong>
-          <p>${formatBudget(movie.revenue)},00</p>
+          <strong className="text-white">Revenue:</strong>
+          <p className="text-white">${formatBudget(movie.revenue)},00</p>
         </div>
       </div>
       <Video apiKey={apiKey} />

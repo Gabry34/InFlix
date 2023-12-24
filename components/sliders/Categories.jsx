@@ -55,6 +55,7 @@ const PopularMovie = () => {
         <div className="flex items-center justify-center sm:hidden">
           <IoIosArrowBack
             size={32}
+            color="white"
             className="cursor-pointer"
             onClick={slideLeft}
           />
@@ -79,7 +80,9 @@ const PopularMovie = () => {
                 />
               </div>
               <div className="w-full h-full bg-black absolute top-0 left-0 bg-opacity-60 rounded-xl z-10 p-2 flex items-end">
-                <h1 className="text-2xl text-white font-Poppins">{category.name}</h1>
+                <h1 className="text-2xl text-white font-Poppins">
+                  {category.name}
+                </h1>
               </div>
             </Link>
           ))}
@@ -87,6 +90,7 @@ const PopularMovie = () => {
         <div className="flex items-center justify-center sm:hidden">
           <IoIosArrowForward
             size={32}
+            color="white"
             className="cursor-pointer"
             onClick={slideRight}
           />

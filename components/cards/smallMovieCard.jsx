@@ -38,7 +38,7 @@ export default function smallMovieCard({ movie }) {
             />
           )}
         </div>
-        <p className="pb-1">{movie.title}</p>
+        <p className="pb-1 text-white">{movie.title}</p>
       </div>
     </div>
   );

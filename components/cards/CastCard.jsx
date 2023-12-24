@@ -34,8 +34,8 @@ const CastCard = ({ cast }) => {
         />
       )}
       <div className="px-2 py-1">
-        <strong className="text-[16px]">{cast.original_name}</strong>
-        <h1 className="text-[14px] opacity-40">{cast.character}</h1>
+        <strong className="text-[16px] text-white">{cast.original_name}</strong>
+        <h1 className="text-[14px] text-white opacity-40">{cast.character}</h1>
       </div>
     </div>
   );

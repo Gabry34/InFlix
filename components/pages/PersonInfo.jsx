@@ -85,36 +85,36 @@ const Person = ({ apiKey }) => {
             />
           </div>
           <div className="w-3/4 flex flex-col gap-5">
-            <h1 className="text-4xl pb-3 mb-3">{person.name}</h1>
+            <h1 className="text-4xl text-white pb-3 mb-3">{person.name}</h1>
             <div className="flex flex-col gap-6">
               <div className="flex gap-3">
-                <strong>Known for:</strong>
-                <p>{person.known_for_department}</p>
+                <strong className="text-white">Known for:</strong>
+                <p className="text-white">{person.known_for_department}</p>
               </div>
               <div className="flex gap-3">
-                <strong>Gender:</strong>
-                <p>{getGender(person.gender)}</p>
+                <strong className="text-white">Gender:</strong>
+                <p className="text-white">{getGender(person.gender)}</p>
               </div>
               <div className="flex gap-3">
-                <strong>Birthday:</strong>
-                <p>
+                <strong className="text-white">Birthday:</strong>
+                <p className="text-white">
                   {person.birthday} ({getAge(currentYear, person.birthday)}{" "}
                   years old)
                 </p>
               </div>
               <div className="flex gap-3">
-                <strong>Birth place:</strong>
-                <p>{person.place_of_birth}</p>
+                <strong className="text-white">Birth place:</strong>
+                <p className="text-white">{person.place_of_birth}</p>
               </div>
             </div>
           </div>
         </div>
         <div className="w-full flex flex-col gap-4">
-          <h1 className="text-3xl">Biography</h1>
-          <p>{person.biography}</p>
+          <h1 className="text-3xl text-white">Biography</h1>
+          <p className="text-white">{person.biography}</p>
         </div>
         <div className="pt-3">
-          <h1 className="text-3xl">Famous movies</h1>
+          <h1 className="text-3xl text-white">Famous movies</h1>
           <div className="personmovies overflow-hidden overflow-x-scroll flex gap-3 mt-2">
             {Array.isArray(personMovies) &&
               personMovies.map((movie) => (
@@ -142,7 +142,7 @@ const Person = ({ apiKey }) => {
                       />
                     )}
                   </div>
-                  <p className="pb-1">{movie.title}</p>
+                  <p className="pb-1 text-white">{movie.title}</p>
                 </div>
               ))}
           </div>

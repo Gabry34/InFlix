@@ -25,58 +25,82 @@ const burger = () => {
         </div>
       </label>
       <div className="dropdown-menu dropdown-menu-bottom-right rounded-none bg-customBlackNav py-0 mt-2 w-96 rounded-br-lg border-none">
-        <a className=" pl-2 pt-5">CATEGORIES</a>
-        <a tabIndex="-1" className="dropdown-item text-sm" href="/genre/drama">
+        <a className="pl-2 pt-5 text-white">CATEGORIES</a>
+        <a
+          tabIndex="-1"
+          className="dropdown-item text-white text-sm"
+          href="/genre/drama"
+        >
           Drama
         </a>
-        <a tabIndex="-1" className="dropdown-item text-sm" href="/genre/horror">
+        <a
+          tabIndex="-1"
+          className="dropdown-item text-white text-sm"
+          href="/genre/horror"
+        >
           Horror
         </a>
-        <a tabIndex="-1" className="dropdown-item text-sm" href="/genre/action">
+        <a
+          tabIndex="-1"
+          className="dropdown-item text-white text-sm"
+          href="/genre/action"
+        >
           Action
         </a>
         <a
           tabIndex="-1"
-          className="dropdown-item text-sm"
+          className="dropdown-item text-white text-sm"
           href="/genre/adventure"
         >
           Adventure
         </a>
         <a
           tabIndex="-1"
-          className="dropdown-item text-sm"
+          className="dropdown-item text-white text-sm"
           href="/genre/animation"
         >
           Animation
         </a>
-        <a tabIndex="-1" className="dropdown-item text-sm" href="/genre/comedy">
+        <a
+          tabIndex="-1"
+          className="dropdown-item text-white text-sm"
+          href="/genre/comedy"
+        >
           Comedy
         </a>
-        <a tabIndex="-1" className="dropdown-item text-sm" href="/genre/crime">
+        <a
+          tabIndex="-1"
+          className="dropdown-item text-white text-sm"
+          href="/genre/crime"
+        >
           Crime
         </a>
         <a
           tabIndex="-1"
-          className="dropdown-item text-sm"
+          className="dropdown-item text-white text-sm"
           href="/genre/documentary"
         >
           Documentary
         </a>
         <a
           tabIndex="-1"
-          className="dropdown-item text-sm"
+          className="dropdown-item text-white text-sm"
           href="/genre/romance"
         >
           Romance
         </a>
-        <a tabIndex="-1" className="dropdown-item text-sm" href="/genre/war">
+        <a
+          tabIndex="-1"
+          className="dropdown-item text-white text-sm"
+          href="/genre/war"
+        >
           War
         </a>
         <div className="w-6/6 h-0.1 border border-white opacity-10 my-2"></div>
-        <a tabIndex="-1" className="dropdown-item text-sm">
+        <a tabIndex="-1" className="dropdown-item text-white text-sm">
           About Us
         </a>
-        <a tabIndex="-1" className="dropdown-item text-sm mb-3">
+        <a tabIndex="-1" className="dropdown-item text-white text-sm mb-3">
           Features
         </a>
       </div>

@@ -65,7 +65,7 @@ const CastCrew = () => {
       <div className="px-44 py-16 flex flex-col gap-10 sm:px-5 sm:justify-center">
         <h1 className="text-center text-7xl">{movie.original_title}</h1>
         <div className="flex flex-col gap-5 sm:w-full sm:justify-center">
-          <h1 className="text-4xl">Cast</h1>
+          <h1 className="text-4xl text-white">Cast</h1>
           <div className="flex flex-wrap gap-3">
             {Array.isArray(cast) &&
               cast.map((castMember) => (
@@ -76,7 +76,7 @@ const CastCrew = () => {
           </div>
         </div>
         <div className="flex flex-col gap-5">
-          <h1 className="text-4xl">Crew</h1>
+          <h1 className="text-4xl text-white">Crew</h1>
           <div className="flex flex-wrap gap-3">
             {Array.isArray(crew) &&
               crew.map((castMember) => (

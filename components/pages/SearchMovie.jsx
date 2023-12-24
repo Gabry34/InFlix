@@ -36,11 +36,11 @@ const SearchMovie = ({ apiKey }) => {
       <Nav />
       <div className="w-full flex justify-center pt-10 pb-5">
         {movies.length > 0 ? (
-          <h1 className="text-4xl">
+          <h1 className="text-4xl text-white">
             Results for &ldquo;{decodeURI(lastSegment)}&rdquo;
           </h1>
         ) : (
-          <h1 className="text-4xl">
+          <h1 className="text-4xl text-white">
             No results found for &ldquo;{decodeURI(lastSegment)}&rdquo;
           </h1>
         )}

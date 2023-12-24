@@ -25,7 +25,7 @@ const Video = ({ apiKey }) => {
 
   return (
     <div className="px-52 sm:px-5">
-      <h1 className="text-4xl font-Poppins">Media</h1>
+      <h1 className="text-4xl text-white font-Poppins">Media</h1>
       <div className="flex w-full justify-center gap-10 py-10 md:gap-3 sm:flex-col">
         {videos.map((video) => (
           <iframe

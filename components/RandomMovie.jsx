@@ -80,6 +80,7 @@ const RandomMovie = ({ apiKey }) => {
               backgroundSize: "cover",
               backgroundPosition: "center",
             }}
+            key={movie.id}
           >
             <div className="absolute flex flex-col justify-between inset-0 bg-gradient-to-l from-transparent to-black w-full h-full md:bg-none">
               <div

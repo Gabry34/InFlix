@@ -50,7 +50,7 @@ const PopularMovie = () => {
   };
 
   return (
-    <div className="w-full flex flex-col justify-center pt-20 px-10 pb-5 xs:px-3">
+    <div className="w-full flex flex-col justify-center pt-10 px-10 pb-5 xs:px-3">
       <div className="w-full flex justify-center items-center">
         <div className="flex items-center justify-center sm:hidden">
           <IoIosArrowBack

@@ -12,7 +12,7 @@ export default function Home() {
       <Nav />
       <div>
         <div>
-          <RandomMovie />
+          <RandomMovie apiKey={apiKey} />
           <Categories />
           <PopularMovie apiKey={apiKey} />
           <UpcomingMovies apiKey={apiKey} />

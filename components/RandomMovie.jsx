@@ -116,7 +116,9 @@ const RandomMovie = ({ apiKey }) => {
                     <div className=" border-white rounded-sm border-[1px] w-5 flex items-center justify-center h-6">
                       T
                     </div>
-                    <strong>{movie.vote_average}/10</strong>
+                    <strong>
+                      {parseFloat(movie.vote_average).toFixed(1)}/10
+                    </strong>
                     <strong>{movie.release_date}</strong>
                     <strong>{movie.original_language}</strong>
                   </div>

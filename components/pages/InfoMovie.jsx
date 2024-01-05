@@ -106,12 +106,10 @@ const InfoMovie = ({ apiKey }) => {
         <div className=" bg-black opacity-90 w-full h-full flex justify-center">
           <div className="px-52 py-28 w-full h-full flex lg:px-10 sm:pt-5">
             <div className="h-full flex items-center min-w-[320px] xl:hidden">
-              <Image
+              <img
                 src={getImageSmall(movie.poster_path)}
                 alt={movie.original_title}
-                width={300}
-                height={500}
-                className="rounded-md"
+                className="rounded-md w-[300px]"
               />
             </div>
             <div className="py-20 px-10 flex flex-col gap-2 sm:pt-0 sm:px-0">

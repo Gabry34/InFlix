@@ -17,20 +17,16 @@ const CastCard = ({ cast }) => {
       onClick={PersonMovie}
     >
       {cast && cast.profile_path ? (
-        <Image
+        <img
           src={getImage(cast.profile_path)}
           alt="image"
-          width={250}
-          height={100}
-          className="rounded-t-lg"
+          className="rounded-t-lg w-[250px]"
         />
       ) : (
-        <Image
+        <img
           src="/NoProfile.png"
           alt="image"
-          width={250}
-          height={100}
-          className="rounded-t-lg"
+          className="rounded-t-lg w-[250px]"
         />
       )}
       <div className="px-2 py-1">

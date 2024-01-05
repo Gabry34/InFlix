@@ -25,12 +25,10 @@ const MovieCard = ({ movie }) => {
       onClick={infoMovie}
     >
       <div className="w-full flex justify-center">
-        <Image
+        <img
           src={getImage(movie.poster_path)}
           alt="image"
-          width={300}
-          height={300}
-          className="rounded-t-lg"
+          className="w-[300px] rounded-t-lg"
         />
       </div>
       <div className="p-1 bg-customBlackNav w-9 h-9 flex justify-center items-center rounded-full border-white border-2 relative bottom-5 ml-2">

@@ -21,20 +21,16 @@ export default function smallMovieCard({ movie }) {
       >
         <div>
           {movie.backdrop_path ? (
-            <Image
+            <img
               src={getImageMovie(movie.backdrop_path)}
               alt="image"
-              width={300}
-              height={200}
-              className="rounded-md"
+              className="rounded-md w-[300px]"
             />
           ) : (
-            <Image
+            <img
               src="/NoPersonMovieImage.png"
               alt="image"
-              width={300}
-              height={200}
-              className="rounded-md"
+              className="w-[300px] rounded-md"
             />
           )}
         </div>

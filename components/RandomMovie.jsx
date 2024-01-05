@@ -90,26 +90,20 @@ const RandomMovie = ({ apiKey }) => {
                 }}
               >
                 <logo>{getLogo(movie.id)}</logo>
-                <Image
+                <img
                   src={getImageSmall(logo)}
                   alt="logo"
-                  width={400}
-                  height={200}
-                  className="sm:hidden"
+                  className="w-[400px] sm:hidden"
                 />
-                <Image
+                <img
                   src={getImageSmall(logo)}
                   alt="logo"
-                  width={260}
-                  height={200}
-                  className="hidden sm:flex xs:hidden"
+                  className="w-[260px] hidden sm:flex xs:hidden"
                 />
-                <Image
+                <img
                   src={getImageSmall(logo)}
                   alt="logo"
-                  width={170}
-                  height={200}
-                  className="hidden xs:flex"
+                  className="w-[170px] hidden xs:flex"
                 />
                 <div className="flex flex-col gap-5 pt-5 md:hidden">
                   <div className="flex gap-5">

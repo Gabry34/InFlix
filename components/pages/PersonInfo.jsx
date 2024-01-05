@@ -76,12 +76,10 @@ const Person = ({ apiKey }) => {
       <div className="w-full px-48 py-20 flex flex-col gap-5 lg:px-5">
         <div className="flex gap-10 sm:flex-col">
           <div className="w-1/4 md:min-w-[200px] sm:w-full">
-            <Image
+            <img
               src={getImage(person.profile_path)}
               alt="image"
-              width={400}
-              height={400}
-              className="rounded-lg"
+              className="rounded-lg w-[400px]"
             />
           </div>
           <div className="w-3/4 flex flex-col gap-5">
@@ -125,20 +123,16 @@ const Person = ({ apiKey }) => {
                 >
                   <div>
                     {movie.backdrop_path ? (
-                      <Image
+                      <img
                         src={getImageMovie(movie.backdrop_path)}
                         alt="image"
-                        width={300}
-                        height={200}
-                        className="rounded-md"
+                        className="rounded-md w-[300px]"
                       />
                     ) : (
-                      <Image
+                      <img
                         src="/NoPersonMovieImage.png"
                         alt="image"
-                        width={300}
-                        height={200}
-                        className="rounded-md"
+                        className="rounded-md w-[300px]"
                       />
                     )}
                   </div>

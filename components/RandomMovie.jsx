@@ -38,7 +38,13 @@ const RandomMovie = ({ apiKey }) => {
     fetch(`https://api.themoviedb.org/3/movie/${id}/images`, options)
       .then((response) => response.json())
       .then((response) => {
-        setLogo(response.logos[0].file_path);
+        let arr = [];
+        response.logos.forEach((logo) => {
+          if (logo.iso_639_1 === "en") {
+            arr.push(logo.file_path);
+          }
+        });
+        setLogo(arr[0]);
       })
       .catch((err) => console.error(err));
   };
